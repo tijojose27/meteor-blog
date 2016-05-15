@@ -1,1 +1,14 @@
 /* CSS declarations go here */
+body{
+    background-color:rgb(241, 222, 208);
+}
+.side-nav{
+    background-color:rgb(241, 222, 208);
+}
+.displayContainer li{
+    list-style:none;
+    display:none;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:larger;
+    color:powderblue;
+}
