@@ -10,8 +10,10 @@
     <br />
     {{> blogs}}
 
+
     <br />
     {{> displayBox}}
+
 
     <script src="JavaScript.js"></script>
 </body>
@@ -62,8 +64,8 @@
 </template>
 
 <template name="displayBox">
-    <div class="container myboxes">
-        <div class="row">
+    <div class="container">
+        <div class="row cards" >
             {{#each blog}}
             <div class="col s12 card-deck">
                 <div class="card blue-grey darken-1">

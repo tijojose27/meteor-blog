@@ -1,4 +1,4 @@
 ﻿$(function() {
     $(".button-collapse").sideNav();
-    $(".card-deck").show(10);
+    $(".cards").show(10);
 });

@@ -10,11 +10,6 @@ Template.displayBox.helpers({
     blog:BlogPost.find({}, {sort:{createdOn:-1 }})
 });
 
-/*
-Template.displayBox.onRendered(function(){
-    $("div:hidden").show(3000);
-});
-*/
 
 
 Template.blogs.events({
@@ -33,8 +28,12 @@ Template.blogs.events({
         //refrensing the form and reseting it to remove the data after it is submitted
         var form = document.getElementById("myform");
         form.reset();
-        $("div:hidden").show(3000);
+        //FADING AND UNFADING TEXT
+        $(".cards").children().first().hide(0);
+        $(".cards").children().first().show(3000);
         //console.log("First Name : "+fName+"\nLast Name : "+lName+"\nBlog : "+bPost);
         return false;
     }
 });
+
+Template.body.events
