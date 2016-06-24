@@ -10,8 +10,15 @@ Template.displayBox.helpers({
     blog:BlogPost.find({}, {sort:{createdOn:-1 }})
 });
 
+/*
+Template.displayBox.onRendered(function(){
+    $("div:hidden").show(3000);
+});
+*/
+
 
 Template.blogs.events({
+    //getting the values from the form and adding it to Database
     'submit .js-add-blog':function(event){
         var fName, lName, bPost;
         fName = event.target.firstName.value;
@@ -23,10 +30,11 @@ Template.blogs.events({
             bPost:bPost,
             createdOn:new Date(),
         });
+        //refrensing the form and reseting it to remove the data after it is submitted
         var form = document.getElementById("myform");
         form.reset();
         $("div:hidden").show(3000);
-        console.log("First Name : "+fName+"\nLast Name : "+lName+"\nBlog : "+bPost);
+        //console.log("First Name : "+fName+"\nLast Name : "+lName+"\nBlog : "+bPost);
         return false;
     }
 });
