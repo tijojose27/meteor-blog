@@ -8,11 +8,14 @@
 
     {{> navigationbar}}
     <br />
+    {{#if currentUser}}
     {{> blogs}}
-
+    {{/if}}
 
     <br />
+
     {{> displayBox}}
+
 
 
     <script src="JavaScript.js"></script>
@@ -21,9 +24,47 @@
 <template name="navigationbar">
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo center"><img src="signature_white.png" /></a>
+            <a href="#" class="brand-logo left"><img src="signature_white.png" /></a>
+            <div id="nav-mobile" class="right">
+
+                <a class="waves-effect waves-red btn modal-trigger red accent-1" href="#modal1">Login/Register</a>
+
+                <div id="modal1" class="modal bottom-sheet">
+                    <div class="modal-content">
+                        <div class="row">
+                            <div class="col s12">
+                                <ul class="tabs">
+                                    <li class="tab col s4">
+                                        <a href="#test1">
+                                            Login
+                                        </a>
+                                    </li>
+                                    <li class="tab col s4">
+                                        <a href="#test2">
+                                            Register
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <div id="test1" class="col s12 mylogin">
+                                    {{> loginFake}}
+                                </div>
+
+                                <div id="test2" class="col s12 mylogin">
+                                    {{> registerFake}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class="btn modal-action modal-close waves-effect waves-red btn-flat red accent-1">Register</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
+
+
 </template>
 
 <template name="blogs">
@@ -65,11 +106,11 @@
 
 <template name="displayBox">
     <div class="container">
-        <div class="row cards" >
+        <div class="row cards">
             {{#each blog}}
             <div class="col s12 card-deck">
-                <div class="card blue-grey darken-1">
-                    <div class="card-content white-text z-depth-2">
+                <div class="card">
+                    <div class="card-content black-text z-depth-2">
                         <span class="card-title">
                             {{fName}} {{lName}}
                         </span>
@@ -81,5 +122,76 @@
             </div>
             {{/each}}
         </div>
+    </div>
+</template>
+
+<template name="register">
+    <form>
+        <input type="email" name="registerEmail" placeholder="you@email.com" />
+        <input type="password" name="registerPassword" placeholder="password" />
+        <input type="submit" value="Register" />
+    </form>
+</template>
+
+<template name="login">
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input type="email" name="loginEmail" placeholder="you@yoursite.com" />
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-field col s6">
+                    <input type="password" name="loginPassword" />
+                    <label for="password">Password</label>
+                </div>
+                <div class="row"></div>
+                <div class="col s12">
+                    <input class="btn" type="submit" value="login" />
+                </div>
+            </div>
+
+        </form>
+    </div>
+</template>
+
+<template name="registerFake">
+    <div class="container-fluid">
+        <form>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input placeholder="First Name" id="first_name" type="text" class="validate">
+                </div>
+                <div class="input-field col s6">
+                    <input id="last_name" placeholder="Last Name" type="text" class="validate">
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="input-field col s6">
+                    <input id="email" placeholder="you@you.com" type="email" class="validate">
+                </div>
+                <div class="input-field col s6">
+                    <input id="password" placeholder="password" type="password" class="validate">
+                </div>
+            </div>
+        </form>
+    </div>
+</template>
+
+<template name="loginFake">
+    <div class="container-fluid">
+        <form>
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="email" placeholder="you@you.com" type="email" class="validate">
+                </div>
+                <div class="input-field col s6">
+                    <input id="password" placeholder="password" type="password" class="validate">
+                </div>
+            </div>
+        </form>
     </div>
 </template>

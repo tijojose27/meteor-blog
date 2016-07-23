@@ -1,0 +1,27 @@
+/* CSS declarations go here */
+nav{
+    background-color:#424242;
+}
+
+body{
+    background-color:#9E9E9E;
+}
+
+.card{
+    background-color:#E0E0E0;
+}
+.side-nav{
+    background-color:rgb(241, 222, 208);
+}
+#smallDate{
+    font-size:0.5em;
+}
+.cssBlog{
+    font-size:1em;
+}
+.cards {
+    display: none;
+}
+.mylogin{
+    color:#FE897F;
+}

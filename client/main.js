@@ -10,9 +10,9 @@ Template.displayBox.helpers({
     blog:BlogPost.find({}, {sort:{createdOn:-1 }})
 });
 
-
-
 Template.blogs.events({
+
+    //ADDING AND UPDATING DATABASE
     //getting the values from the form and adding it to Database
     'submit .js-add-blog':function(event){
         var fName, lName, bPost;
@@ -30,10 +30,14 @@ Template.blogs.events({
         form.reset();
         //FADING AND UNFADING TEXT
         $(".cards").children().first().hide(0);
-        $(".cards").children().first().show(3000);
+        $(".cards").children().first().show(2000);
         //console.log("First Name : "+fName+"\nLast Name : "+lName+"\nBlog : "+bPost);
         return false;
-    }
+    },
+
+
 });
 
-Template.body.events
+Accounts.ui.config({
+    passwordSignupFields:"USERNAME_ONLY"
+});
